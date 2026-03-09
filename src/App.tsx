@@ -1,14 +1,12 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { themeService } from "@/services/themeService";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JobApplicationForm from "@/components/form/JobApplicationForm";
 import Diego from "@/components/diego/Diego.tsx";
-import type { DiegoRef } from "@/types/diego";
 
 export default function App() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  const diegoRef = useRef<DiegoRef>(null);
 
   useEffect(() => {
     setTheme(themeService.init());
@@ -20,11 +18,11 @@ export default function App() {
 
   return (
     <div className={theme === "dark" ? "dark" : ""}>
-      <Diego ref={diegoRef} />
+      <Diego/>
       <div className="min-h-screen bg-background">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="px-64 py-8">
-          <JobApplicationForm onDiegoFlash={() => diegoRef.current?.flash()} />
+          <JobApplicationForm />
         </main>
         <Footer />
       </div>
