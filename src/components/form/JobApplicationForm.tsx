@@ -37,7 +37,11 @@ const validationRules = {
   url: /^https?:\/\/.+/,
 };
 
-export default function JobApplicationForm() {
+interface JobApplicationFormProps {
+  onDiegoFlash?: () => void;
+}
+
+export default function JobApplicationForm({ onDiegoFlash }: JobApplicationFormProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -274,6 +278,7 @@ export default function JobApplicationForm() {
             errors={errors}
             formData={formData}
             handleChange={handleChange}
+            onDiegoFlash={onDiegoFlash}
           />
 
           <Separator />

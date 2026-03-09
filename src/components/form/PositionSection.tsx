@@ -15,6 +15,7 @@ export default function PositionSection({
   errors,
   formData,
   handleChange,
+  onDiegoFlash,
 }: FormSectionProps) {
   return (
     <div className="space-y-6">
@@ -35,6 +36,7 @@ export default function PositionSection({
             id="location"
             value={formData.location}
             onChange={(e) => handleChange("location", e.target.value)}
+            onFocus={() => onDiegoFlash?.()}
             placeholder="Tell us more..."
             rows={3}
             className="resize-none"

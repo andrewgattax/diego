@@ -92,4 +92,5 @@ export interface FormSectionProps {
   formData: FormData;
   handleChange: (field: keyof FormData, value: string | boolean | File | null) => void;
   handleBlur?: (field: keyof FormData) => void;
+  onDiegoFlash?: () => void;
 }
