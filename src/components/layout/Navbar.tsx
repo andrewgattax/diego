@@ -19,7 +19,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
             className="h-10 w-10 rounded-lg object-cover"
           />
           <div className="flex flex-col">
-            <span className="text-lg font-semibold leading-tight">NovaTech Solutions</span>
+            <span className="text-lg font-semibold text-white leading-tight">NovaTech Solutions</span>
             <span className="text-xs text-muted-foreground">Innovating Tomorrow, Today</span>
           </div>
         </div>
