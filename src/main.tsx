@@ -6,6 +6,6 @@ import BitchAssDinosaur from './components/random-components/bitchassdinosaur.ts
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BitchAssDinosaur />
+    <App />
   </StrictMode>,
 )
