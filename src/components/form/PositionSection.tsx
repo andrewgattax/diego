@@ -10,13 +10,14 @@ import { Badge } from "@/components/ui/badge";
 import type { FormSectionProps } from "@/types/form";
 import { JOB_POSITIONS, EXPERIENCE_LEVELS, START_DATES } from "@/constants/jobPositions";
 import {Textarea} from "@/components/ui/textarea.tsx";
+import { useDiego } from "@/contexts/DiegoContext";
 
 export default function PositionSection({
   errors,
   formData,
   handleChange,
-  onDiegoFlash,
 }: FormSectionProps) {
+  const { flash, startDiego } = useDiego();
   return (
     <div className="space-y-6">
       <div>
@@ -36,7 +37,7 @@ export default function PositionSection({
             id="location"
             value={formData.location}
             onChange={(e) => handleChange("location", e.target.value)}
-            onFocus={() => onDiegoFlash?.()}
+            onFocus={startDiego}
             placeholder="Tell us more..."
             rows={3}
             className="resize-none"

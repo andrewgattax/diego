@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import type { FormSectionProps } from "@/types/form";
 import { JOB_POSITIONS, EXPERIENCE_LEVELS, START_DATES } from "@/constants/jobPositions";
+import {useDiego} from "@/contexts/DiegoContext.tsx";
 
 
 export default function PersonalInfoSection({
@@ -18,6 +19,9 @@ export default function PersonalInfoSection({
   handleChange,
   handleBlur,
 }: FormSectionProps) {
+
+  const { flash } = useDiego();
+
   return (
     <div className="space-y-6">
       <div>
