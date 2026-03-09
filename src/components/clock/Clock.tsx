@@ -69,41 +69,60 @@ export default function Clock() {
   };
 
   return (
-    <div className="flex h-screen w-screen bg-black">
+    <div className="flex h-screen w-screen bg-black font-sans">
       {/* Left column - Image slideshow */}
-      <div className="relative h-full w-1/2 overflow-hidden">
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt="Slideshow"
-            className={`absolute inset-0 h-full w-full object-fill transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-          />
-        ))}
+      <div className="relative h-full w-1/2 overflow-hidden bg-black">
+        {images.map((img, index) => {
+          const isActive = index === currentIndex;
+          const isPrev = index === (currentIndex - 1 + images.length) % images.length;
+
+          return (
+            <img
+              key={index}
+              src={img}
+              alt="Slideshow"
+              style={{
+                transition: isActive || isPrev
+                  ? "opacity 1s ease-in-out, transform 10s linear"
+                  : "opacity 1s ease-in-out",
+              }}
+              className={`absolute inset-0 h-full w-full object-fill ${isActive ? "opacity-100" : "opacity-0"
+                } ${isActive || isPrev ? "scale-110" : "scale-100"}`}
+            />
+          );
+        })}
       </div>
 
       {/* Right column - Clock info */}
-      <div className="flex h-full w-1/2 flex-col items-center justify-center text-white">
-        <div className="text-9xl font-thin tabular-nums">
-          {hours}:{minutes}:{seconds}
-        </div>
-        <div className="mt-4 text-4xl font-light text-gray-400">
-          {dayName}
-        </div>
-        <div className="mt-2 text-2xl font-light text-gray-500">
-          {year}
-        </div>
-      </div>
+      <div className="relative flex h-full w-1/2 flex-col items-center justify-center bg-zinc-950 text-white">
 
-      {/* Audio toggle button */}
-      <button
-        onClick={toggleAudio}
-        className="absolute bottom-8 right-8 z-10 rounded-full bg-white/5 p-4 text-white/50 hover:bg-white/10 hover:text-white transition-all backdrop-blur-md"
-        aria-label={isAudioPlaying ? "Mute audio" : "Play audio"}
-      >
-        {isAudioPlaying ? <Volume2 className="h-8 w-8" /> : <VolumeX className="h-8 w-8" />}
-      </button>
+        {/* Simple modern digital clock */}
+        <div className="flex flex-col items-center space-y-4">
+          <div className="flex items-baseline font-light tracking-tight tabular-nums">
+            <span className="text-8xl md:text-[10rem]">{hours}</span>
+            <span className="mx-2 animate-pulse text-6xl md:text-8xl text-zinc-600">:</span>
+            <span className="text-8xl md:text-[10rem]">{minutes}</span>
+            <span className="ml-4 text-4xl md:text-6xl text-zinc-500">{seconds}</span>
+          </div>
+
+          <div className="flex items-center space-x-4 text-zinc-400">
+            <span className="text-2xl font-medium uppercase tracking-[0.2em]">
+              {dayName}
+            </span>
+            <div className="h-1 w-1 rounded-full bg-zinc-600" />
+            <span className="text-2xl font-light tracking-widest">{year}</span>
+          </div>
+        </div>
+
+        {/* Audio toggle button */}
+        <button
+          onClick={toggleAudio}
+          className="absolute bottom-8 right-8 z-20 rounded-full border border-zinc-800 bg-zinc-900/50 p-4 text-zinc-400 backdrop-blur-md transition-all hover:scale-110 hover:bg-zinc-800 hover:text-white"
+          aria-label={isAudioPlaying ? "Mute audio" : "Play audio"}
+        >
+          {isAudioPlaying ? <Volume2 className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
+        </button>
+      </div>
     </div>
   );
 }

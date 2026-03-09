@@ -6,6 +6,7 @@ import flashbangAudio from "@/assets/audio/flashbang.mp3";
 interface DiegoContextValue {
   flash: () => void;
   startDiego: () => void;
+  showClock: boolean;
 }
 
 const DiegoContext = createContext<DiegoContextValue | null>(null);
@@ -13,6 +14,8 @@ const DiegoContext = createContext<DiegoContextValue | null>(null);
 export function DiegoProvider({ children }: { children: ReactNode }) {
   const [opacity, setOpacity] = useState(0);
   const [image, setImage] = useState(diego);
+  const [showClock, setShowClock] = useState(false);
+  const [imgTransition, setImgTransition] = useState("none");
 
   const flash = useCallback(() => {
     setOpacity(1);
@@ -38,9 +41,21 @@ export function DiegoProvider({ children }: { children: ReactNode }) {
           setOpacity(1);
           new Audio(flashbangAudio).play();
           setTimeout(() => {
-            setImage(bianco)
-          }, 250)
-        }, 1000)
+            setImage(bianco);
+            // here
+
+
+            // Keep solid white for 1 second before fading
+            setTimeout(() => {
+              setShowClock(true);
+              setImgTransition("opacity 4s ease-out");
+              setOpacity(0);
+              setTimeout(() => {
+                setImgTransition("none");
+              }, 4000);
+            }, 2000);
+          }, 250);
+        }, 1000);
         clearInterval(intervalId);
         setOpacity(0);
       }
@@ -57,17 +72,16 @@ export function DiegoProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <DiegoContext.Provider value={{ flash, startDiego }}>
+    <DiegoContext.Provider value={{ flash, startDiego, showClock }}>
       {children}
       <div
-        className="fixed inset-0 z-9999 h-screen w-screen"
-        style={{ display: opacity === 0 ? "none" : "block" }}
+        className={`fixed inset-0 z-9999 h-screen w-screen ${opacity === 0 ? "pointer-events-none" : ""}`}
       >
         <img
           src={image}
           alt="Diego"
           className="h-full w-full object-fill"
-          style={{ opacity }}
+          style={{ opacity, transition: imgTransition }}
         />
       </div>
     </DiegoContext.Provider>

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Company Info */}
           <div className="space-y-3">
-            <h3 className="text-base font-semibold">NovaTech Solutions</h3>
+            <h3 className="text-base text-white font-semibold">NovaTech Solutions</h3>
             <p className="text-sm text-muted-foreground">
               Innovating Tomorrow, Today
             </p>
@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h3 className="text-base font-semibold">Quick Links</h3>
+            <h3 className="text-base text-white font-semibold">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Button
@@ -65,7 +65,7 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div className="space-y-3">
-            <h3 className="text-base font-semibold">Connect With Us</h3>
+            <h3 className="text-base text-white font-semibold">Connect With Us</h3>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Mail className="h-4 w-4" />
               <span>careers@novatech.com</span>
