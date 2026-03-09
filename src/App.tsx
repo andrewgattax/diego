@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button.tsx";
+import { useEffect, useState, useRef } from "react";
 import { themeService } from "@/services/themeService";
-import cabajo from "@/assets/cabajo.jpeg";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import JobApplicationForm from "@/components/form/JobApplicationForm";
+import Diego from "@/components/diego/Diego.tsx";
+import type { DiegoRef } from "@/types/diego";
 
 export default function App() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const diegoRef = useRef<DiegoRef>(null);
 
   useEffect(() => {
     setTheme(themeService.init());
@@ -16,27 +20,13 @@ export default function App() {
 
   return (
     <div className={theme === "dark" ? "dark" : ""}>
-      <div className="flex flex-col gap-6 items-center justify-center h-screen">
-        <img src={cabajo} alt="Logo" className="w-lg" />
-        <h1 className="text-4xl text-primary">This app is using <span className={"text-blue-400 font-bold"}>Tailwind</span> + <span className={"font-bold"}>ShadCN</span></h1>
-        <div className="flex gap-4">
-          <Button
-            onClick={() => {
-              alert("Someone pressed me!")
-            }}
-            className="w-48"
-            variant="outline"
-          >
-            A beautiful button
-          </Button>
-          <Button
-            onClick={toggleTheme}
-            className="w-48"
-            variant="default"
-          >
-            Switch to {theme === "light" ? "dark" : "light"} mode
-          </Button>
-        </div>
+      <Diego ref={diegoRef} />
+      <div className="min-h-screen bg-background">
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        <main className="px-64 py-8">
+          <JobApplicationForm onDiegoFlash={() => diegoRef.current?.flash()} />
+        </main>
+        <Footer />
       </div>
     </div>
   );
