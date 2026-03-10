@@ -9,7 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import type { FormSectionProps } from "@/types/form";
 import { JOB_POSITIONS, EXPERIENCE_LEVELS, START_DATES } from "@/constants/jobPositions";
-import {Textarea} from "@/components/ui/textarea.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import { useDiego } from "@/contexts/DiegoContext";
 
 export default function PositionSection({
@@ -25,7 +25,7 @@ export default function PositionSection({
         <p className="text-sm text-muted-foreground">Tell us about the role you're interested in.</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
         {/* Position */}
 
         {/* Sex? Textarea */}

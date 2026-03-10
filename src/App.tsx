@@ -17,7 +17,7 @@ function AppContent() {
     <div className="dark">
       <div className="min-h-screen bg-background">
         <Navbar theme="dark" toggleTheme={() => { }} />
-        <main className="px-64 py-8">
+        <main className="container mx-auto px-4 py-8 md:px-8 lg:px-16 xl:px-32 max-w-8xl">
           <JobApplicationForm />
         </main>
         <Footer />

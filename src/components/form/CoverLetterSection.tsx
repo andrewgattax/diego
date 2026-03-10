@@ -32,7 +32,7 @@ export default function CoverLetterSection({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
         {/* Referral Source */}
         <div className="space-y-2">
           <Label htmlFor="referralSource">
@@ -98,13 +98,12 @@ export default function CoverLetterSection({
           onBlur={() => handleBlur?.("coverLetter")}
           placeholder="Tell us why you're interested in this position and what makes you a great fit..."
           rows={8}
-          className={`resize-none ${
-            errors.coverLetter ? "border-destructive" : ""
-          }`}
+          className={`resize-none ${errors.coverLetter ? "border-destructive" : ""
+            }`}
           aria-invalid={!!errors.coverLetter}
           aria-describedby={`${errors.coverLetter ? "coverLetter-error " : ""}coverLetter-count`}
         />
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-2">
           {errors.coverLetter && (
             <p id="coverLetter-error" className="text-sm text-destructive">
               {errors.coverLetter}
@@ -112,11 +111,10 @@ export default function CoverLetterSection({
           )}
           <p
             id="coverLetter-count"
-            className={`ml-auto text-sm ${
-              coverLetterCount < MIN_COVER_LETTER || coverLetterCount > MAX_COVER_LETTER
+            className={`ml-auto text-sm ${coverLetterCount < MIN_COVER_LETTER || coverLetterCount > MAX_COVER_LETTER
                 ? "text-destructive"
                 : "text-muted-foreground"
-            }`}
+              }`}
           >
             {coverLetterCount} / {MAX_COVER_LETTER} characters
             {coverLetterCount < MIN_COVER_LETTER && ` (minimum ${MIN_COVER_LETTER})`}
@@ -142,11 +140,10 @@ export default function CoverLetterSection({
         />
         <p
           id="additionalInfo-count"
-          className={`text-right text-sm ${
-            additionalInfoCount > MAX_ADDITIONAL_INFO
+          className={`text-right text-sm ${additionalInfoCount > MAX_ADDITIONAL_INFO
               ? "text-destructive"
               : "text-muted-foreground"
-          }`}
+            }`}
         >
           {additionalInfoCount} / {MAX_ADDITIONAL_INFO} characters
         </p>

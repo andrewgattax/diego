@@ -23,11 +23,11 @@ export default function SubmitSection({
   return (
     <div className="space-y-6">
       {/* Agreements */}
-      <div className="space-y-4 rounded-lg border border-border bg-muted/40 p-6">
+      <div className="space-y-4 rounded-lg border border-border bg-muted/40 p-4 sm:p-6">
         <h3 className="text-lg font-semibold">Agreements</h3>
 
         {/* Certify Accuracy */}
-        <div className="flex items-start gap-3">
+        <div className="flex items-center gap-3">
           <Checkbox
             id="certifyAccuracy"
             checked={formData.certifyAccuracy}
@@ -36,10 +36,10 @@ export default function SubmitSection({
             }
             aria-invalid={!!errors.certifyAccuracy}
           />
-          <div className="grid gap-1.5 leading-none">
+          <div className="grid gap-1.5 pt-0.5">
             <Label
               htmlFor="certifyAccuracy"
-              className="font-normal peer-data-[state=checked]:text-foreground"
+              className="block font-normal leading-normal peer-data-[state=checked]:text-foreground"
             >
               I certify that all information provided in this application is accurate
               and complete. <span className="text-destructive">*</span>
@@ -51,7 +51,7 @@ export default function SubmitSection({
         </div>
 
         {/* Agree to Terms */}
-        <div className="flex items-start gap-3">
+        <div className="flex items-center gap-3">
           <Checkbox
             id="agreeToTerms"
             checked={formData.agreeToTerms}
@@ -60,27 +60,25 @@ export default function SubmitSection({
             }
             aria-invalid={!!errors.agreeToTerms}
           />
-          <div className="grid gap-1.5 leading-none">
+          <div className="grid gap-1.5 pt-0.5">
             <Label
               htmlFor="agreeToTerms"
-              className="font-normal peer-data-[state=checked]:text-foreground"
+              className="block font-normal leading-normal peer-data-[state=checked]:text-foreground"
             >
               I agree to the{" "}
-              <button
-                type="button"
+              <span
                 onClick={(e) => e.preventDefault()}
-                className="underline underline-offset-4 hover:text-primary"
+                className="underline underline-offset-4 hover:text-primary cursor-pointer"
               >
                 Terms of Service
-              </button>{" "}
+              </span>{" "}
               and{" "}
-              <button
-                type="button"
+              <span
                 onClick={(e) => e.preventDefault()}
-                className="underline underline-offset-4 hover:text-primary"
+                className="underline underline-offset-4 hover:text-primary cursor-pointer"
               >
                 Privacy Policy
-              </button>
+              </span>
               . <span className="text-destructive">*</span>
             </Label>
             {errors.agreeToTerms && (
@@ -90,7 +88,7 @@ export default function SubmitSection({
         </div>
 
         {/* Background Check */}
-        <div className="flex items-start gap-3">
+        <div className="flex items-center gap-3">
           <Checkbox
             id="consentBackgroundCheck"
             checked={formData.consentBackgroundCheck}
@@ -99,10 +97,10 @@ export default function SubmitSection({
             }
             aria-invalid={!!errors.consentBackgroundCheck}
           />
-          <div className="grid gap-1.5 leading-none">
+          <div className="grid gap-1.5 pt-0.5">
             <Label
               htmlFor="consentBackgroundCheck"
-              className="font-normal peer-data-[state=checked]:text-foreground"
+              className="block font-normal leading-normal peer-data-[state=checked]:text-foreground"
             >
               I consent to background checks as part of the hiring process.{" "}
               <span className="text-destructive">*</span>
@@ -116,7 +114,7 @@ export default function SubmitSection({
         </div>
 
         {/* Newsletter */}
-        <div className="flex items-start gap-3">
+        <div className="flex items-center gap-3">
           <Checkbox
             id="subscribeNewsletter"
             checked={formData.subscribeNewsletter}
@@ -124,10 +122,10 @@ export default function SubmitSection({
               handleChange("subscribeNewsletter", checked === true)
             }
           />
-          <div className="grid gap-1.5 leading-none">
+          <div className="grid gap-1.5 pt-0.5">
             <Label
               htmlFor="subscribeNewsletter"
-              className="font-normal peer-data-[state=checked]:text-foreground"
+              className="block font-normal leading-normal peer-data-[state=checked]:text-foreground"
             >
               Subscribe to job alerts and company updates.
             </Label>
@@ -136,13 +134,13 @@ export default function SubmitSection({
       </div>
 
       {/* Action Buttons */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
         <Button
           type="button"
           variant="outline"
           onClick={onReset}
           disabled={isLoading || isSubmitted}
-          className="sm:w-auto"
+          className="w-full sm:w-auto order-2 sm:order-1"
         >
           Reset Form
         </Button>
@@ -150,7 +148,7 @@ export default function SubmitSection({
           type="submit"
           onClick={onSubmit}
           disabled={isLoading || isSubmitted}
-          className="min-w-[140px] sm:w-auto"
+          className="w-full min-w-0 sm:min-w-[140px] sm:w-auto order-1 sm:order-2"
         >
           {isLoading ? (
             <>

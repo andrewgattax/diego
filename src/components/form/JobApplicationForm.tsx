@@ -37,9 +37,9 @@ const validationRules = {
   url: /^https?:\/\/.+/,
 };
 
-interface JobApplicationFormProps {}
+interface JobApplicationFormProps { }
 
-export default function JobApplicationForm({}: JobApplicationFormProps) {
+export default function JobApplicationForm({ }: JobApplicationFormProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<FormErrors>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -247,10 +247,10 @@ export default function JobApplicationForm({}: JobApplicationFormProps) {
 
   return (
     <Card className="w-full">
-      <CardContent className="p-6 sm:p-8">
+      <CardContent className="p-4 sm:p-6 md:p-8">
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
           {/* Header */}
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-left space-y-2">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Join Our Team
             </h1>

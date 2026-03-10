@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import type { FormSectionProps } from "@/types/form";
 import { JOB_POSITIONS, EXPERIENCE_LEVELS, START_DATES } from "@/constants/jobPositions";
-import {useDiego} from "@/contexts/DiegoContext.tsx";
+import { useDiego } from "@/contexts/DiegoContext.tsx";
 
 
 export default function PersonalInfoSection({
@@ -29,7 +29,7 @@ export default function PersonalInfoSection({
         <p className="text-sm text-muted-foreground">Please provide your contact details.</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
         {/* First Name */}
         <div className="space-y-2">
           <Label htmlFor="firstName">
