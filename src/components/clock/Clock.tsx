@@ -69,9 +69,9 @@ export default function Clock() {
   };
 
   return (
-    <div className="flex h-screen w-screen bg-black font-sans">
-      {/* Left column - Image slideshow */}
-      <div className="relative h-full w-1/2 overflow-hidden bg-black">
+    <div className="flex flex-col-reverse lg:flex-row h-screen w-screen bg-black font-sans">
+      {/* Top/Left section - Image slideshow (Bottom on Mobile) */}
+      <div className="relative h-1/2 w-full lg:h-full lg:w-1/2 overflow-hidden bg-black">
         {images.map((img, index) => {
           const isActive = index === currentIndex;
           const isPrev = index === (currentIndex - 1 + images.length) % images.length;
@@ -93,34 +93,34 @@ export default function Clock() {
         })}
       </div>
 
-      {/* Right column - Clock info */}
-      <div className="relative flex h-full w-1/2 flex-col items-center justify-center bg-zinc-950 text-white">
+      {/* Bottom/Right section - Clock info (Top on Mobile) */}
+      <div className="relative flex h-1/2 w-full lg:h-full lg:w-1/2 flex-col items-center justify-center bg-zinc-950 text-white">
 
         {/* Simple modern digital clock */}
         <div className="flex flex-col items-center space-y-4">
           <div className="flex items-baseline font-light tracking-tight tabular-nums">
-            <span className="text-8xl md:text-[10rem]">{hours}</span>
-            <span className="mx-2 animate-pulse text-6xl md:text-8xl text-zinc-600">:</span>
-            <span className="text-8xl md:text-[10rem]">{minutes}</span>
-            <span className="ml-4 text-4xl md:text-6xl text-zinc-500">{seconds}</span>
+            <span className="text-6xl sm:text-8xl lg:text-[10rem]">{hours}</span>
+            <span className="mx-1 sm:mx-2 animate-pulse text-4xl sm:text-6xl lg:text-8xl text-zinc-600">:</span>
+            <span className="text-6xl sm:text-8xl lg:text-[10rem]">{minutes}</span>
+            <span className="ml-2 sm:ml-4 text-2xl sm:text-4xl lg:text-6xl text-zinc-500">{seconds}</span>
           </div>
 
-          <div className="flex items-center space-x-4 text-zinc-400">
-            <span className="text-2xl font-medium uppercase tracking-[0.2em]">
+          <div className="flex items-center space-x-2 sm:space-x-4 text-zinc-400">
+            <span className="text-lg sm:text-2xl font-medium uppercase tracking-[0.2em] text-center">
               {dayName}
             </span>
-            <div className="h-1 w-1 rounded-full bg-zinc-600" />
-            <span className="text-2xl font-light tracking-widest">{year}</span>
+            <div className="h-1 w-1 rounded-full bg-zinc-600 shrink-0" />
+            <span className="text-lg sm:text-2xl font-light tracking-widest">{year}</span>
           </div>
         </div>
 
         {/* Audio toggle button */}
         <button
           onClick={toggleAudio}
-          className="absolute bottom-8 right-8 z-20 rounded-full border border-zinc-800 bg-zinc-900/50 p-4 text-zinc-400 backdrop-blur-md transition-all hover:scale-110 hover:bg-zinc-800 hover:text-white"
+          className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 rounded-full border border-zinc-800 bg-zinc-900/50 p-3 sm:p-4 text-zinc-400 backdrop-blur-md transition-all hover:scale-110 hover:bg-zinc-800 hover:text-white"
           aria-label={isAudioPlaying ? "Mute audio" : "Play audio"}
         >
-          {isAudioPlaying ? <Volume2 className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
+          {isAudioPlaying ? <Volume2 className="h-5 w-5 sm:h-6 sm:w-6" /> : <VolumeX className="h-5 w-5 sm:h-6 sm:w-6" />}
         </button>
       </div>
     </div>
