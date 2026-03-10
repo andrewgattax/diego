@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './bitchstyle/bitchass.scss';
+// import './bitchstyle/bitchass.scss';
 
 import bombAudio from '../../assets/audio/faaah.mp3';
 import bombTexture from '../../assets/diego/image2.jpeg';
@@ -105,10 +105,10 @@ export default function BitchAssDinosaur() {
     while (stack.length > 0) {
       const [r, c] = stack.pop()!;
       const current = newGrid[r][c];
-      
+
       if (!current.isRevealed && !current.isFlagged) {
         current.isRevealed = true;
-        
+
         if (current.neighborMines === 0) {
           for (let i = -1; i <= 1; i++) {
             for (let j = -1; j <= 1; j++) {
@@ -137,7 +137,7 @@ export default function BitchAssDinosaur() {
   const toggleFlag = (e: React.MouseEvent, row: number, col: number) => {
     e.preventDefault();
     if (gameState !== 'playing') return;
-    
+
     const newGrid = [...grid];
     if (!newGrid[row][col].isRevealed) {
       newGrid[row][col].isFlagged = !newGrid[row][col].isFlagged;
@@ -182,7 +182,7 @@ export default function BitchAssDinosaur() {
         {gameState === 'playing' && <span>Playing... 💣</span>}
         <button onClick={startNewGame}>Restart</button>
       </div>
-      
+
       <div className="grid">
         {grid.map((row, rIdx) => (
           <div key={rIdx} className="row">
