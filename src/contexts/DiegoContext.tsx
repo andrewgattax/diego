@@ -14,7 +14,7 @@ const DiegoContext = createContext<DiegoContextValue | null>(null);
 export function DiegoProvider({ children }: { children: ReactNode }) {
   const [opacity, setOpacity] = useState(0);
   const [image, setImage] = useState(diego);
-  const [showClock, setShowClock] = useState(true);
+  const [showClock, setShowClock] = useState(false);
   const [imgTransition, setImgTransition] = useState("none");
 
   const flash = useCallback(() => {
