@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './bitchstyle/bitchass.scss';
+import './bitchstyle/bitchass.css';
 
 import bombAudio from '../../assets/audio/faaah.mp3';
 import bombTexture from '../../assets/diego/image2.jpeg';
