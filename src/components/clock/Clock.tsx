@@ -5,9 +5,10 @@ import image2 from "@/assets/diego/image2.jpeg";
 import image3 from "@/assets/diego/image3.jpeg";
 import image4 from "@/assets/diego/image4.jpeg";
 import image5 from "@/assets/diego/image5.jpeg";
+import image6 from "@/assets/diego/image6.jpeg";
 import c418 from "@/assets/audio/C418.mp3";
 
-const images = [image1, image2, image3, image4, image5];
+const images = [image1, image2, image3, image4, image5, image6];
 const INTERVAL_MS = 5000;
 
 export default function Clock() {
