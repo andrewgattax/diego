@@ -1,0 +1,137 @@
+.minesweeper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background-color: black;
+  color: #f8f8f2;
+  box-sizing: border-box;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #ffd166;
+    z-index: 10;
+  }
+
+  .game-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 10;
+
+    .won { color: #06d6a0; }
+    .lost { color: #ef476f; }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #118ab2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #073b4c;
+      }
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: #2b2b36;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+
+    .row {
+      display: flex;
+      gap: 4px;
+
+      .cell {
+        width: 50px;
+        height: 50px;
+        background-color: #4a4e69;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.1s;
+        color: #f8f8f2;
+        overflow: hidden;
+
+        &:not(.revealed):hover {
+          background-color: #9a8c98;
+        }
+
+        &.revealed {
+          background-color: #22223b;
+          cursor: default;
+
+          &.mine {
+            background-color: #ef476f;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              pointer-events: none;
+            }
+          }
+        }
+        
+        &.flagged {
+          color: #ef476f;
+        }
+      }
+    }
+  }
+
+  .confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .confetti-piece {
+    position: absolute;
+    top: -10vh;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    animation: fall linear forwards;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
+  }
+}

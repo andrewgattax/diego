@@ -5,8 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f5461cd-b6be-483a-9579-3a6fb04a50c4" name="Changes" comment="reset to next">
+      <change afterPath="$PROJECT_DIR$/public/audio/C418.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/audio/faaah.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/audio/flashbang.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/blanco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/cabajo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego/image1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego/image2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego/image3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego/image4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego/image5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/diego/image6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/clock/Clock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form/CoverLetterSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form/ExperienceSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form/JobApplicationForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form/PersonalInfoSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form/PositionSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/form/SubmitSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/random-components/bitchassdinosaur.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/random-components/bitchstyle/bitchass.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/random-components/bitchstyle/bitchass.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/random-components/bitchstyle/bitchass.scss.merda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/badge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/label.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/select.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/separator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/textarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/jobPositions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contexts/DiegoContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/diego.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/form.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +51,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="61" />
+    <option name="cachedIndexableFilesCount" value="50" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -57,6 +93,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="3Aie0N6BHawvUKMBVsp45siJKva" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,7 +109,9 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "dev",
+    "javascript.preferred.runtime.type.id": "node",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/andrew/Dev/diego/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,7 +138,14 @@
     <option name="suspendCountdown" value="8" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/assets/audio" />
       <recent name="$PROJECT_DIR$/src/assets" />
     </key>
@@ -136,7 +184,7 @@
       <workItem from="1773250147441" duration="24000" />
       <workItem from="1773250284368" duration="68000" />
       <workItem from="1773844905386" duration="214000" />
-      <workItem from="1773845145736" duration="2096000" />
+      <workItem from="1773845145736" duration="3205000" />
     </task>
     <task id="LOCAL-00001" summary="diego drag">
       <option name="closed" value="true" />
