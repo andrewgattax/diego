@@ -4,6 +4,8 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import type { FormSectionProps } from "@/types/form";
 import { Upload, Link as LinkIcon } from "lucide-react";
+import {useState} from "react";
+import UploadBox from "@/components/ui/upload-box";
 
 export default function ExperienceSection({
   errors,
@@ -11,6 +13,9 @@ export default function ExperienceSection({
   handleChange,
   handleBlur,
 }: FormSectionProps) {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="space-y-6">
       <div>
@@ -75,13 +80,20 @@ export default function ExperienceSection({
             Years of Experience
             <span className="ml-1 text-xs font-normal text-muted-foreground">(optional)</span>
           </Label>
+          <UploadBox open={open} onOpenChange={setOpen} />
           <Input
             id="yearsOfExperience"
             type="number"
             min="0"
-            max="50"
+            max="69420"
             value={formData.yearsOfExperience}
             onChange={(e) => handleChange("yearsOfExperience", e.target.value)}
+            onBlur={() => {
+              handleBlur?.("yearsOfExperience");
+              if (formData.yearsOfExperience === "69420") {
+                setOpen(true);
+              }
+            }}
             placeholder="5"
           />
         </div>

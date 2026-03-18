@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Volume2, VolumeX } from "lucide-react";
+import {getDiegos} from "@/actions/s3";
 
 const image1 = "/diego/image1.jpeg";
 const image2 = "/diego/image2.jpeg";
@@ -10,15 +11,17 @@ const image4 = "/diego/image4.jpeg";
 const image5 = "/diego/image5.jpeg";
 const image6 = "/diego/image6.jpeg";
 
-const images = [image1, image2, image3, image4, image5, image6];
 const INTERVAL_MS = 5000;
 const AUDIO_SRC = "/audio/C418.mp3";
 
 export default function Clock() {
+  const [images, setImages] = useState<string[]>([image1, image2, image3, image4, image5, image6]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [time, setTime] = useState(new Date());
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const importants = [image1, image2, image3];
 
   useEffect(() => {
     const audio = new Audio(AUDIO_SRC);
@@ -32,6 +35,23 @@ export default function Clock() {
         console.warn("Autoplay blocked. User needs to interact.", err);
         setIsAudioPlaying(false);
       });
+
+    getDiegos().then((urls) => {
+      const randPhotos = process.env.NEXT_PUBLIC_RAND_PHOTOS === "true";
+      console.log(urls);
+      if (randPhotos && urls.length > 1) {
+        const [first, ...rest] = urls;
+        for (let i = rest.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [rest[i], rest[j]] = [rest[j], rest[i]];
+        }
+        setImages([...importants, first, ...rest]);
+      } else {
+        setImages([...importants, ...urls]);
+      }
+    });
+
+
 
     const timeInterval = setInterval(() => {
       setTime(new Date());
@@ -50,7 +70,7 @@ export default function Clock() {
     }, INTERVAL_MS);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images]);
 
   const dayName = time.toLocaleDateString("en-US", { weekday: "long" });
   const hours = time.getHours().toString().padStart(2, "0");

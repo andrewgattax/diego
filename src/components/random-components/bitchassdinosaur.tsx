@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './bitchstyle/bitchass.css';
 
-import bombAudio from '../../assets/audio/faaah.mp3';
-import bombTexture from '../../assets/diego/image2.jpeg';
-import img1 from '../../assets/diego/image1.jpeg';
-import img2 from '../../assets/diego/image2.jpeg';
-import img3 from '../../assets/diego/image3.jpeg';
-import img4 from '../../assets/diego/image4.jpeg';
-import img5 from '../../assets/diego/image5.jpeg';
+const bombTexture = "/diego/image2.jpeg";
+
+const bombAudio = "/audio/faaah.mp3";
+
+const img1 = "/diego/image1.jpeg";
+const img2 = "/diego/image2.jpeg";
+const img3 = "/diego/image3.jpeg";
+const img4 = "/diego/image4.jpeg";
+const img5 = "/diego/image5.jpeg";
 
 const diegoImages = [img1, img2, img3, img4, img5];
 

@@ -44,9 +44,6 @@ export function DiegoProvider({ children }: { children: ReactNode }) {
           new Audio("/audio/flashbang.mp3").play();
           setTimeout(() => {
             setImage(bianco);
-            // here
-
-
             // Keep solid white for 1 second before fading
             setTimeout(() => {
               setShowClock(true);
