@@ -5,62 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f5461cd-b6be-483a-9579-3a6fb04a50c4" name="Changes" comment="reset to next">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/file.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/globe.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/window.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IMPLEMENTATION_PLAN.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/audio/C418.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/audio/faaah.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/audio/flashbang.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/blanco.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego/image1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego/image2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego/image3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego/image4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego/image5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/diego/image6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/clock/Clock.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/CoverLetterSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/ExperienceSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/JobApplicationForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/PersonalInfoSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/PositionSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/SubmitSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Navbar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/random-components/bitchassdinosaur.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/random-components/bitchstyle/bitchass.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/random-components/bitchstyle/bitchass.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/random-components/bitchstyle/bitchass.scss.merda" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/badge.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/input.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/label.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/select.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/separator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/textarea.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/jobPositions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/DiegoContext.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/diego.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/form.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wrangler.json" beforeDir="false" afterPath="$PROJECT_DIR$/wrangler.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +136,7 @@
       <workItem from="1773250147441" duration="24000" />
       <workItem from="1773250284368" duration="68000" />
       <workItem from="1773844905386" duration="214000" />
-      <workItem from="1773845145736" duration="1273000" />
+      <workItem from="1773845145736" duration="2096000" />
     </task>
     <task id="LOCAL-00001" summary="diego drag">
       <option name="closed" value="true" />
@@ -223,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773093971608</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="reset to next">
+      <option name="closed" value="true" />
+      <created>1773846452187</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773846452187</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
