@@ -15,7 +15,7 @@ jobs:
             - name: Install dependencies                                                                                                                                                                                                                                       .idea/workspace.xml          +17 -32
               run: npm ci                                                                                                                                                                                                                                                      .open-next/.build/open-next.c+148 -1
             - name: Build                                                                                                                                                                                                                                                      .open-next/.build/open-next.c+142 -1
-              run: npm run build
+              run: npm run diomerda
             - name: Deploy
               uses: cloudflare/wrangler-action@v3
               with:
