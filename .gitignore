@@ -10,6 +10,8 @@
 !.yarn/releases
 !.yarn/versions
 
+.wrangler
+
 # testing
 /coverage
 
@@ -31,7 +33,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 .open-next
-.dev.vars
+sesso
 set-secrets.sh
 
 # env files (can opt-in for committing if needed)
@@ -46,3 +48,7 @@ package-lock.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+sesso
+!.dev.vars.example
+!.env.example

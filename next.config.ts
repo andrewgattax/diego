@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "pub-xxxx.r2.dev", // sostituisci con il tuo dominio R2
+        hostname: "diegobucket.ndrw.cat", // sostituisci con il tuo dominio R2
       },
     ],
   },
@@ -14,3 +14,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
