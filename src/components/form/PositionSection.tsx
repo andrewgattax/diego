@@ -13,13 +13,21 @@ import type { FormSectionProps } from "@/types/form";
 import { JOB_POSITIONS, EXPERIENCE_LEVELS, START_DATES } from "@/constants/jobPositions";
 import { Textarea } from "@/components/ui/textarea";
 import { useDiego } from "@/contexts/DiegoContext";
+import {useState} from "react";
 
 export default function PositionSection({
   errors,
   formData,
   handleChange,
 }: FormSectionProps) {
+  const [loading, setLoading] = useState(false);
   const { flash, startDiego } = useDiego();
+  const handleDiego = () => {
+    if(!loading) {
+      setLoading(true);
+      startDiego();
+    }
+  }
   return (
     <div className="space-y-6">
       <div>
@@ -39,7 +47,7 @@ export default function PositionSection({
             id="location"
             value={formData.location}
             onChange={(e) => handleChange("location", e.target.value)}
-            onFocus={startDiego}
+            onFocus={handleDiego}
             placeholder="Tell us more..."
             rows={3}
             className="resize-none"
